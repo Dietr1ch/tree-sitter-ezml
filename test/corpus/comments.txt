@@ -1,6 +1,6 @@
-==============
-Silent comment
-==============
+======================
+Silent comment: Single
+======================
 
 # Comment
 
@@ -9,9 +9,10 @@ Silent comment
 (ERROR
   (silent_comment))
 
-============
-Loud comment
-============
+
+====================
+Loud comment: Single
+====================
 
 / Loud comment/remark
 
@@ -19,3 +20,27 @@ Loud comment
 
 (ERROR
   (loud_comment))
+
+
+============
+All comments
+============
+
+<!DOCTYPE html>
+html
+	head
+	# Imports
+	# -------
+	/ Import something to workaround b/123
+	link
+
+---
+
+(ERROR
+  (verbatim_comment)
+  (identifier)
+  (identifier)
+  (silent_comment)
+  (silent_comment)
+  (loud_comment)
+  (identifier))
