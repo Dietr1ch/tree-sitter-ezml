@@ -1,5 +1,5 @@
-test: build
-	tree-sitter parse test/corpus/verbatim.zml
+test:
+	tree-sitter test
 
 build: grammar.js
 	tree-sitter generate
