@@ -1,4 +1,4 @@
-test:
+test: build
 	tree-sitter test
 
 build: grammar.js
