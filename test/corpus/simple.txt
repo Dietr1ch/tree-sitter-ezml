@@ -14,57 +14,63 @@ html
 Tags
 ====
 
-html
-  #id_for_html_element
+html#id_for_html_element {
 	body#body_id
 		h1#title.big.bold.serif
+}
 ---
 
 (document
   (element
-   (element_name)
-   (element_id_name))
-  (element
-   (element_name)
-   (element_id_name))
-  (element
-   (element_name)
-   (element_id_name)
-   (tag (tag_name))
-   (tag (tag_name))
-   (tag (tag_name)))
- )
+    (element_name)
+    (element_id_name)
+    (content
+      (element
+        (element_name)
+        (element_id_name))
+      (element
+        (element_name)
+        (element_id_name)
+        (tag
+          (tag_name))
+        (tag
+          (tag_name))
+        (tag
+          (tag_name))))))
 
 ==========
 Attributes
 ==========
 
-html
-	head
+html {
+	head {
 		link,href="/style.css"
 		link,href='/script.js'
+  }
 	body
+}
 
 ---
 
 (document
   (element
-    (element_name))
-  (element
-    (element_name))
-  (element
     (element_name)
-    (attribute
-      (attribute_name)
-      (attribute_value)))
-  (element
-    (element_name)
-    (attribute
-      (attribute_name)
-      (attribute_value)))
-  (element
-    (element_name))
-    )
+    (content
+      (element
+        (element_name)
+        (content
+          (element
+            (element_name)
+            (attribute
+              (attribute_name)
+              (attribute_value)))
+          (element
+            (element_name)
+            (attribute
+              (attribute_name)
+              (attribute_value)))))
+      (element
+        (element_name)))))
 
 
 =============
