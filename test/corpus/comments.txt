@@ -38,9 +38,12 @@ html
 
 (document
   (doctype)
-  (entity)
-  (entity)
+  (element
+   (element_name))
+  (element
+   (element_name))
   (silent_comment)
   (silent_comment)
   (loud_comment)
-  (entity))
+  (element
+   (element_name)))

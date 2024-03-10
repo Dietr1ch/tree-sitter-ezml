@@ -7,4 +7,5 @@ html
 ---
 
 (document
-  (entity))
+  (element
+   (element_name)))

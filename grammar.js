@@ -7,10 +7,9 @@ module.exports = grammar ({
 
 		_node: $ => choice(
 			$.doctype,
-			$.entity,
 			$._comment,
 			// $.text,
-			// $.element,
+			$.element,
 			// $.script_element,
 			// $.style_element,
 			// $.erroneous_end_tag,
@@ -18,8 +17,11 @@ module.exports = grammar ({
 
 		doctype: _ => token(seq('<!', /.*/, '>')),
 
-		entity: _ => /([A-Za-z]{1,30})/,
+		element: $ => choice(
+			$.element_name,
+		),
 
+		element_name: _ => /([A-Za-z]{1,30})/,
 
 		// Comments
 		_comment: $ => choice(

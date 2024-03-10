@@ -17,11 +17,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "entity"
+          "name": "_comment"
         },
         {
           "type": "SYMBOL",
-          "name": "_comment"
+          "name": "element"
         }
       ]
     },
@@ -45,7 +45,16 @@
         ]
       }
     },
-    "entity": {
+    "element": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "element_name"
+        }
+      ]
+    },
+    "element_name": {
       "type": "PATTERN",
       "value": "([A-Za-z]{1,30})"
     },
