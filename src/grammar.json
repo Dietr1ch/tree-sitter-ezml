@@ -17,11 +17,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment"
+          "name": "element"
         },
         {
           "type": "SYMBOL",
-          "name": "element"
+          "name": "_comment"
         },
         {
           "type": "SYMBOL",
@@ -50,11 +50,48 @@
       }
     },
     "element": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
           "name": "element_name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "#"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "element_id_name"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "."
+              },
+              {
+                "type": "SYMBOL",
+                "name": "element_tag_name"
+              }
+            ]
+          }
         }
       ]
     },
@@ -104,6 +141,14 @@
       }
     },
     "element_name": {
+      "type": "PATTERN",
+      "value": "([A-Za-z0-9_-]{1,30})"
+    },
+    "element_id_name": {
+      "type": "PATTERN",
+      "value": "([A-Za-z0-9_-]{1,30})"
+    },
+    "element_tag_name": {
       "type": "PATTERN",
       "value": "([A-Za-z0-9_-]{1,30})"
     },

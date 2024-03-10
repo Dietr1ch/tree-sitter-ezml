@@ -11,6 +11,27 @@ html
    (element_name)))
 
 =============
+Tag
+=============
+
+html
+	body
+		h1.big.bold.serif
+---
+
+(document
+  (element
+   (element_name))
+  (element
+   (element_name))
+  (element
+   (element_name)
+   (element_tag_name)
+   (element_tag_name)
+   (element_tag_name))
+ )
+
+=============
 Not so simple
 =============
 
@@ -18,7 +39,7 @@ html  # This is the html node
 	head
 	body
 		/ title
-		h1
+		h1.big
 
 ---
 
@@ -32,5 +53,6 @@ html  # This is the html node
    (element_name))
   (loud_comment)
   (element
-   (element_name))
+   (element_name)
+   (element_tag_name))
  )

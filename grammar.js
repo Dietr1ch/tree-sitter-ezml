@@ -7,17 +7,19 @@ module.exports = grammar ({
 
 		_node: $ => choice(
 			$.doctype,
+			$.element,
 			$._comment,
 			// $.text,
-			$.element,
 			$._action,
 			// $.erroneous_end_tag,
 		),
 
 		doctype: _ => token(seq('<!', /.*/, '>')),
 
-		element: $ => choice(
+		element: $ => seq(
 			$.element_name,
+			optional(seq('#', $.element_id_name)),
+			repeat(seq('.', $.element_tag_name)),
 		),
 
 		_action: $ => choice(
@@ -27,7 +29,9 @@ module.exports = grammar ({
 		inline_action: _ => token(seq('<', /.*/)),
 		exec_action:   _ => token(seq('|', /.*/)),
 
-		element_name: _ => /([A-Za-z0-9_-]{1,30})/,
+		element_name:     _ => /([A-Za-z0-9_-]{1,30})/,
+		element_id_name:  _ => /([A-Za-z0-9_-]{1,30})/,
+		element_tag_name: _ => /([A-Za-z0-9_-]{1,30})/,
 
 		// Comments
 		_comment: $ => choice(
