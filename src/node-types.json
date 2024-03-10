@@ -34,6 +34,14 @@
         {
           "type": "element",
           "named": true
+        },
+        {
+          "type": "loud_comment",
+          "named": true
+        },
+        {
+          "type": "silent_comment",
+          "named": true
         }
       ]
     }

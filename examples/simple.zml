@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-html#head {
+body {
   head {
     title
+    meta,name="theme-color"
+        ,content="#333"
     link,href="/style.css"
   }
 }

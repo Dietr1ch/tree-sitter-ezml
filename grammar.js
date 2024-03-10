@@ -21,9 +21,13 @@ module.exports = grammar ({
 		),
 		content: $ => seq(
 			'{',
-			repeat($.element),
-			'}'
+			repeat(choice(
+				$.element,
+				$._comment,
+			)),
+			'}',
 		),
+
 		element_name:     _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
 		element_id_name:  _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
 
@@ -40,8 +44,8 @@ module.exports = grammar ({
 		attribute: $ => seq(',', $.attribute_name, optional(seq('=', $.attribute_value))),
 		attribute_name: _ => /([A-Za-z_][A-Za-z0-9_-]*)/,
 		attribute_value: _ => choice(
-			seq('"', token(/[^"]+/), '"'),
-			seq("'", token(/[^']+/), "'"),
+			seq('"', token(/[^"]*/), '"'),
+			seq("'", token(/[^']*/), "'"),
 		),
 
 		// Comments
@@ -49,7 +53,13 @@ module.exports = grammar ({
 			$.loud_comment,
 			$.silent_comment,
 		),
-		loud_comment:   _ => token(seq('!', token(/.*/), /\n/)),
-		silent_comment: _ => token(seq('/', token(/.*/), /\n/))
+		loud_comment:   _ => token(seq(
+			'!',
+			token(/.*/),
+		)),
+		silent_comment:   _ => token(seq(
+			'/',
+			token(/.*/),
+		)),
 	}
 });

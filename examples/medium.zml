@@ -46,6 +46,13 @@ html#head {
         }
         a,href="https://github.com/Dietr1ch/"
          ,title="My github profile" {
+          svg.icon
+             ,aria-hidden="true"
+             ,width="16"
+             ,height="16"
+             ,fill="#fff" {
+            path,d=""
+          }
         }
       }
       div.narrow {
