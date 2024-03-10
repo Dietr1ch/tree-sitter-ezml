@@ -12,4 +12,9 @@ html
 ---
 
 (ERROR
-  (UNEXPECTED 't'))
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier))
