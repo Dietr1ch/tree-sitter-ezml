@@ -21,7 +21,7 @@ module.exports = grammar ({
 			$.element_name,
 		),
 
-		element_name: _ => /([A-Za-z]{1,30})/,
+		element_name: _ => /([A-Za-z0-9]{1,30})/,
 
 		// Comments
 		_comment: $ => choice(

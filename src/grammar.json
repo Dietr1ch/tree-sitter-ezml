@@ -56,7 +56,7 @@
     },
     "element_name": {
       "type": "PATTERN",
-      "value": "([A-Za-z]{1,30})"
+      "value": "([A-Za-z0-9]{1,30})"
     },
     "_comment": {
       "type": "CHOICE",
