@@ -3,6 +3,7 @@ module.exports = grammar ({
 
   rules: {
     // TODO: Add the grammar rules
-    source_file: $ => 'hello'
+    source_file: $ => 'hello',
+    verbatim_line: $ => '<!DOCTYPE html>'
   }
 });

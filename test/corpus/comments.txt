@@ -1,0 +1,21 @@
+==============
+Silent comment
+==============
+
+# Comment
+
+---
+
+(ERROR
+  (UNEXPECTED '#'))
+
+============
+Loud comment
+============
+
+/ Loud comment/remark
+
+---
+
+(ERROR
+  (UNEXPECTED '/'))

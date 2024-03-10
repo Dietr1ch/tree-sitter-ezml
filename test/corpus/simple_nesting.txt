@@ -1,0 +1,15 @@
+==============
+Simple nesting
+==============
+
+html
+	head
+		title
+	body
+		ul
+			li
+
+---
+
+(ERROR
+  (UNEXPECTED 't'))

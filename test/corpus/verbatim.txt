@@ -1,0 +1,10 @@
+========
+Verbatim
+========
+
+<!DOCTYPE html>
+
+---
+
+(ERROR
+  (verbatim_line))
