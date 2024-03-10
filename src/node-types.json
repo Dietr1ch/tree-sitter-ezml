@@ -1,0 +1,45 @@
+[
+  {
+    "type": "document",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "doctype",
+          "named": true
+        },
+        {
+          "type": "entity",
+          "named": true
+        },
+        {
+          "type": "loud_comment",
+          "named": true
+        },
+        {
+          "type": "silent_comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "doctype",
+    "named": true
+  },
+  {
+    "type": "entity",
+    "named": true
+  },
+  {
+    "type": "loud_comment",
+    "named": true
+  },
+  {
+    "type": "silent_comment",
+    "named": true
+  }
+]

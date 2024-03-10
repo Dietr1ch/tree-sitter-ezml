@@ -6,7 +6,7 @@ Silent comment: Single
 
 ---
 
-(ERROR
+(document
   (silent_comment))
 
 
@@ -18,7 +18,7 @@ Loud comment: Single
 
 ---
 
-(ERROR
+(document
   (loud_comment))
 
 
@@ -36,11 +36,11 @@ html
 
 ---
 
-(ERROR
-  (verbatim_comment)
-  (identifier)
-  (identifier)
+(document
+  (doctype)
+  (entity)
+  (entity)
   (silent_comment)
   (silent_comment)
   (loud_comment)
-  (identifier))
+  (entity))

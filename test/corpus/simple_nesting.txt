@@ -11,10 +11,10 @@ html
 
 ---
 
-(ERROR
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+(document
+  (entity)
+  (entity)
+  (entity)
+  (entity)
+  (entity)
+  (entity))
