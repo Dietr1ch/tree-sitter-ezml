@@ -8,5 +8,7 @@ pkgs.mkShell {
 
     gcc
     nodejs
+
+    gnumake
   ];
 }
