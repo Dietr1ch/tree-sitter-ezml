@@ -1,0 +1,22 @@
+======
+Inline
+======
+
+<file/to/inline.html
+
+---
+
+(document
+  (inline_action))
+
+
+===========
+exec_action
+===========
+
+|cat aoeu | md5sum
+
+---
+
+(document
+  (exec_action))

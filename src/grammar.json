@@ -22,6 +22,10 @@
         {
           "type": "SYMBOL",
           "name": "element"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_action"
         }
       ]
     },
@@ -54,9 +58,54 @@
         }
       ]
     },
+    "_action": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "inline_action"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "exec_action"
+        }
+      ]
+    },
+    "inline_action": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "<"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          }
+        ]
+      }
+    },
+    "exec_action": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "|"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          }
+        ]
+      }
+    },
     "element_name": {
       "type": "PATTERN",
-      "value": "([A-Za-z0-9]{1,30})"
+      "value": "([A-Za-z0-9_-]{1,30})"
     },
     "_comment": {
       "type": "CHOICE",

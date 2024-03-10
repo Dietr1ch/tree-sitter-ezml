@@ -10,8 +10,7 @@ module.exports = grammar ({
 			$._comment,
 			// $.text,
 			$.element,
-			// $.script_element,
-			// $.style_element,
+			$._action,
 			// $.erroneous_end_tag,
 		),
 
@@ -21,7 +20,14 @@ module.exports = grammar ({
 			$.element_name,
 		),
 
-		element_name: _ => /([A-Za-z0-9]{1,30})/,
+		_action: $ => choice(
+			$.inline_action,
+			$.exec_action,
+		),
+		inline_action: _ => token(seq('<', /.*/)),
+		exec_action:   _ => token(seq('|', /.*/)),
+
+		element_name: _ => /([A-Za-z0-9_-]{1,30})/,
 
 		// Comments
 		_comment: $ => choice(

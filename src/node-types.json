@@ -16,6 +16,14 @@
           "named": true
         },
         {
+          "type": "exec_action",
+          "named": true
+        },
+        {
+          "type": "inline_action",
+          "named": true
+        },
+        {
           "type": "loud_comment",
           "named": true
         },
@@ -47,6 +55,14 @@
   },
   {
     "type": "element_name",
+    "named": true
+  },
+  {
+    "type": "exec_action",
+    "named": true
+  },
+  {
+    "type": "inline_action",
     "named": true
   },
   {
