@@ -28,8 +28,8 @@ module.exports = grammar ({
 			'}',
 		),
 
-		element_name:     _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
-		element_id_name:  _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
+		element_name:    _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
+		element_id_name: _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
 
 		_action: $ => choice(
 			$.inline_action,
@@ -53,13 +53,7 @@ module.exports = grammar ({
 			$.loud_comment,
 			$.silent_comment,
 		),
-		loud_comment:   _ => token(seq(
-			'!',
-			token(/.*/),
-		)),
-		silent_comment:   _ => token(seq(
-			'/',
-			token(/.*/),
-		)),
+		loud_comment:   _ => token(seq('!', token(/.*/),)),
+		silent_comment: _ => token(seq('/', token(/.*/),)),
 	}
 });
