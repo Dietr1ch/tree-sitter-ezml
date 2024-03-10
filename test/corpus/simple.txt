@@ -10,27 +10,62 @@ html
   (element
    (element_name)))
 
-=============
-Tag
-=============
+====
+Tags
+====
 
 html
-	body#body
-		h1.big.bold.serif
+  #id_for_html_element
+	body#body_id
+		h1#title.big.bold.serif
 ---
 
 (document
-  (element
-   (element_name))
   (element
    (element_name)
    (element_id_name))
   (element
    (element_name)
-   (element_tag_name)
-   (element_tag_name)
-   (element_tag_name))
+   (element_id_name))
+  (element
+   (element_name)
+   (element_id_name)
+   (tag (tag_name))
+   (tag (tag_name))
+   (tag (tag_name)))
  )
+
+==========
+Attributes
+==========
+
+html
+	head
+		link,href="/style.css"
+		link,href='/script.js'
+	body
+
+---
+
+(document
+  (element
+    (element_name))
+  (element
+    (element_name))
+  (element
+    (element_name)
+    (attribute
+      (attribute_name)
+      (attribute_value)))
+  (element
+    (element_name)
+    (attribute
+      (attribute_name)
+      (attribute_value)))
+  (element
+    (element_name))
+    )
+
 
 =============
 Not so simple
@@ -55,5 +90,5 @@ html  / This is the html node
   (loud_comment)
   (element
    (element_name)
-   (element_tag_name))
+   (tag (tag_name)))
  )

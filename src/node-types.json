@@ -1,5 +1,29 @@
 [
   {
+    "type": "attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_name",
+          "named": true
+        },
+        {
+          "type": "attribute_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_value",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "document",
     "named": true,
     "fields": {},
@@ -43,6 +67,10 @@
       "required": true,
       "types": [
         {
+          "type": "attribute",
+          "named": true
+        },
+        {
           "type": "element_id_name",
           "named": true
         },
@@ -51,7 +79,7 @@
           "named": true
         },
         {
-          "type": "element_tag_name",
+          "type": "tag",
           "named": true
         }
       ]
@@ -68,17 +96,47 @@
     "fields": {}
   },
   {
-    "type": "element_tag_name",
+    "type": "tag",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": "#",
     "named": false
   },
   {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "attribute_name",
+    "named": true
   },
   {
     "type": "doctype",
@@ -98,6 +156,10 @@
   },
   {
     "type": "silent_comment",
+    "named": true
+  },
+  {
+    "type": "tag_name",
     "named": true
   }
 ]

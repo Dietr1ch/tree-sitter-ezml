@@ -19,8 +19,12 @@ module.exports = grammar ({
 		element: $ => seq(
 			$.element_name,
 			optional(seq('#', $.element_id_name)),
-			repeat(seq('.', $.element_tag_name)),
+			repeat($.tag),
+			repeat($.attribute),
+			//repeat($._node),
 		),
+		element_name:     _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
+		element_id_name:  _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
 
 		_action: $ => choice(
 			$.inline_action,
@@ -29,16 +33,22 @@ module.exports = grammar ({
 		inline_action: _ => token(seq('<', /.*/)),
 		exec_action:   _ => token(seq('|', /.*/)),
 
-		element_name:     _ => /([A-Za-z0-9_-]{1,30})/,
-		element_id_name:  _ => /([A-Za-z0-9_-]{1,30})/,
-		element_tag_name: _ => /([A-Za-z0-9_-]{1,30})/,
+		tag: $ => seq('.', $.tag_name),
+		tag_name: _ => /([A-Za-z0-9_-]{1,30})/,
+
+		attribute: $ => seq(',', $.attribute_name, '=', $.attribute_value),
+		attribute_name: _ => /([A-Za-z_][A-Za-z0-9_-]*)/,
+		attribute_value: _ => choice(
+			seq('"', token(/[^"]+/), '"'),
+			seq("'", token(/[^']+/), "'"),
+		),
 
 		// Comments
 		_comment: $ => choice(
 			$.loud_comment,
 			$.silent_comment,
 		),
-		loud_comment:     _ => token(seq('!', /.*/)),
-		silent_comment:   _ => token(seq('/', /.*/))
+		loud_comment:   _ => token(seq('!', token(/.*/), /\n/)),
+		silent_comment: _ => token(seq('/', token(/.*/), /\n/))
 	}
 });
