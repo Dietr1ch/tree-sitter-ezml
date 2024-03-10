@@ -172,7 +172,7 @@
         "members": [
           {
             "type": "STRING",
-            "value": "/"
+            "value": "!"
           },
           {
             "type": "PATTERN",
@@ -188,7 +188,7 @@
         "members": [
           {
             "type": "STRING",
-            "value": "#"
+            "value": "/"
           },
           {
             "type": "PATTERN",

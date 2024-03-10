@@ -15,7 +15,7 @@ Tag
 =============
 
 html
-	body
+	body#body
 		h1.big.bold.serif
 ---
 
@@ -23,7 +23,8 @@ html
   (element
    (element_name))
   (element
-   (element_name))
+   (element_name)
+   (element_id_name))
   (element
    (element_name)
    (element_tag_name)
@@ -35,10 +36,10 @@ html
 Not so simple
 =============
 
-html  # This is the html node
+html  / This is the html node
 	head
 	body
-		/ title
+		! title
 		h1.big
 
 ---

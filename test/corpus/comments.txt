@@ -2,7 +2,7 @@
 Silent comment: Single
 ======================
 
-# Comment
+/ Comment
 
 ---
 
@@ -14,7 +14,7 @@ Silent comment: Single
 Loud comment: Single
 ====================
 
-/ Loud comment/remark
+! Loud comment/remark
 
 ---
 
@@ -29,9 +29,9 @@ All comments
 <!DOCTYPE html>
 html
 	head
-	# Imports
-	# -------
-	/ Import something to workaround b/123
+	/ Imports
+	/ -------
+	! Import something to workaround b/123
 	link
 
 ---

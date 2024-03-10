@@ -38,7 +38,7 @@ module.exports = grammar ({
 			$.loud_comment,
 			$.silent_comment,
 		),
-		loud_comment:     _ => token(seq('/', /.*/)),
-		silent_comment:   _ => token(seq('#', /.*/))
+		loud_comment:     _ => token(seq('!', /.*/)),
+		silent_comment:   _ => token(seq('/', /.*/))
 	}
 });
