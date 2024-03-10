@@ -1,0 +1,11 @@
+:PROPERTIES:
+:CATEGORY: tree-sitter-ezml
+:END:
+* TODO Learn how to create Tree-Sitter parsers
+https://tree-sitter.github.io/tree-sitter/creating-parsers
+
+The Python and HTML grammar should give us a really good start, essentially we
+want the HTML grammar, but allow Python-like indentation using smart-tabs.
+
+[[./docs/grammar-html.js]]
+[[./docs/grammar-python.js]]
