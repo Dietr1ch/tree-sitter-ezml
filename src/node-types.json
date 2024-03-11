@@ -89,29 +89,58 @@
   {
     "type": "element",
     "named": true,
-    "fields": {},
+    "fields": {
+      "attributes": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "content",
+            "named": true
+          }
+        ]
+      },
+      "id": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "#",
+            "named": false
+          },
+          {
+            "type": "element_id_name",
+            "named": true
+          }
+        ]
+      },
+      "tags": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "tag",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "attribute",
-          "named": true
-        },
-        {
-          "type": "content",
-          "named": true
-        },
-        {
-          "type": "element_id_name",
-          "named": true
-        },
-        {
           "type": "element_name",
-          "named": true
-        },
-        {
-          "type": "tag",
           "named": true
         }
       ]

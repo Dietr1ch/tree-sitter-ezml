@@ -57,51 +57,67 @@
           "name": "element_name"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "#"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "element_id_name"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "id",
           "content": {
-            "type": "SYMBOL",
-            "name": "tag"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "#"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "element_id_name"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         },
         {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "tags",
           "content": {
-            "type": "SYMBOL",
-            "name": "attribute"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
+            "type": "REPEAT",
+            "content": {
               "type": "SYMBOL",
-              "name": "content"
-            },
-            {
-              "type": "BLANK"
+              "name": "tag"
             }
-          ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "attributes",
+          "content": {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "attribute"
+            }
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "content",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "content"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         }
       ]
     },

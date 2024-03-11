@@ -14,10 +14,10 @@ module.exports = grammar ({
 
 		element: $ => seq(
 			$.element_name,
-			optional(seq('#', $.element_id_name)),
-			repeat($.tag),
-			repeat($.attribute),
-			optional($.content),
+			field('id',         optional(seq('#', $.element_id_name))),
+			field('tags',       repeat($.tag)),
+			field('attributes', repeat($.attribute)),
+			field('content',    optional($.content)),
 		),
 		content: $ => seq(
 			'{',
