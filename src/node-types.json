@@ -126,7 +126,7 @@
       "required": true,
       "types": [
         {
-          "type": "element_id_name",
+          "type": "element_id",
           "named": true
         },
         {
@@ -137,7 +137,7 @@
     }
   },
   {
-    "type": "element_id_name",
+    "type": "element_id",
     "named": true,
     "fields": {}
   },

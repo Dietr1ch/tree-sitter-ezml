@@ -8,6 +8,7 @@ html,lang="en" {
 
 		/ Theme
 		/ =====
+		! Theme
 		link,href="/style/cloudy-sea80.webp"
 		    ,rel="preload"
 		    ,fetchpriority="high"
@@ -20,7 +21,7 @@ html,lang="en" {
 		meta,name="theme-color"
 		    ,content="#333"
 		link,href="/style/theme.css"
-        ,rel="stylesheet"
+		    ,rel="stylesheet"
 		/ HTMX
 		script,src="/lib/htmx.pre.js"
 		      ,fetchpriority="high"

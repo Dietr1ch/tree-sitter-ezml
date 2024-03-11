@@ -3,6 +3,16 @@
   "version": "0.0.1",
   "description": "Grammar for ezML, the zimple markup language",
   "main": "bindings/node",
+  "keywords": [
+    "parser",
+    "ezml",
+    "zml"
+  ],
+  "author": "Dietrich Daroch <dietrich@daroch.me (https://github.com/Dietr1ch)",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "nan": "^2.19.0"
+  },
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
     "build-wasm": "tree-sitter build-wasm",
@@ -10,13 +20,20 @@
     "parse": "tree-sitter parse",
     "test": "tree-sitter test && script/parse-examples"
   },
-  "keywords": [
-    "parser",
-    "ezml"
-  ],
-  "author": "Dietrich Daroch <dietrich@daroch.me (https://github.com/Dietr1ch)",
-  "license": "AGPL-3.0-or-later",
-  "dependencies": {
-    "nan": "^2.19.0"
-  }
+  "tree-sitter": [
+    {
+      "scope": "source.ezml",
+      "file-types": [
+        "zml",
+        "ezml"
+      ],
+      "injection-regex": "ezml",
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "tags": [
+        "queries/tags.scm"
+      ]
+    }
+  ]
 }

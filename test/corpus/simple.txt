@@ -23,14 +23,14 @@ html#id_for_html_element {
 (document
   (element
     (element_name)
-    (element_id_name)
+    (element_id)
     (content
       (element
         (element_name)
-        (element_id_name))
+        (element_id))
       (element
         (element_name)
-        (element_id_name)
+        (element_id)
         (tag
           (tag_name))
         (tag
