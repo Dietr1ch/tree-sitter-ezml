@@ -284,18 +284,18 @@ static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [1] = {.index = 0, .length = 1},
   [2] = {.index = 1, .length = 1},
   [3] = {.index = 2, .length = 1},
-  [4] = {.index = 3, .length = 2},
-  [5] = {.index = 5, .length = 2},
-  [6] = {.index = 7, .length = 2},
-  [7] = {.index = 9, .length = 2},
-  [8] = {.index = 11, .length = 3},
-  [9] = {.index = 14, .length = 3},
-  [10] = {.index = 17, .length = 3},
-  [11] = {.index = 20, .length = 3},
-  [12] = {.index = 23, .length = 4},
-  [13] = {.index = 27, .length = 4},
-  [14] = {.index = 31, .length = 4},
-  [15] = {.index = 35, .length = 5},
+  [4] = {.index = 3, .length = 1},
+  [5] = {.index = 4, .length = 2},
+  [6] = {.index = 6, .length = 2},
+  [7] = {.index = 8, .length = 2},
+  [8] = {.index = 10, .length = 1},
+  [9] = {.index = 11, .length = 1},
+  [10] = {.index = 12, .length = 1},
+  [11] = {.index = 13, .length = 3},
+  [12] = {.index = 16, .length = 2},
+  [13] = {.index = 18, .length = 2},
+  [14] = {.index = 20, .length = 2},
+  [15] = {.index = 22, .length = 3},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -306,53 +306,38 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [2] =
     {field_attributes, 1},
   [3] =
-    {field_id, 1},
-    {field_id, 2},
-  [5] =
+    {field_id, 0},
+  [4] =
     {field_content, 2},
     {field_tags, 1},
-  [7] =
+  [6] =
     {field_attributes, 2},
     {field_tags, 1},
-  [9] =
+  [8] =
     {field_attributes, 1},
     {field_content, 2},
-  [11] =
+  [10] =
     {field_content, 3},
-    {field_id, 1},
-    {field_id, 2},
-  [14] =
-    {field_id, 1},
-    {field_id, 2},
+  [11] =
     {field_tags, 3},
-  [17] =
+  [12] =
     {field_attributes, 3},
-    {field_id, 1},
-    {field_id, 2},
-  [20] =
+  [13] =
     {field_attributes, 2},
     {field_content, 3},
     {field_tags, 1},
-  [23] =
+  [16] =
     {field_content, 4},
-    {field_id, 1},
-    {field_id, 2},
     {field_tags, 3},
-  [27] =
+  [18] =
     {field_attributes, 4},
-    {field_id, 1},
-    {field_id, 2},
     {field_tags, 3},
-  [31] =
+  [20] =
     {field_attributes, 3},
     {field_content, 4},
-    {field_id, 1},
-    {field_id, 2},
-  [35] =
+  [22] =
     {field_attributes, 4},
     {field_content, 5},
-    {field_id, 1},
-    {field_id, 2},
     {field_tags, 3},
 };
 
@@ -2269,8 +2254,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [21] = {.entry = {.count = 1, .reusable = true}}, SHIFT(37),
   [23] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element, 4, .production_id = 9),
   [25] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element, 4, .production_id = 9),
-  [27] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element, 3, .production_id = 4),
-  [29] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element, 3, .production_id = 4),
+  [27] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element, 3),
+  [29] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element, 3),
   [31] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element, 2, .production_id = 2),
   [33] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element, 2, .production_id = 2),
   [35] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_document, 1),
@@ -2296,8 +2281,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [79] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_element_repeat2, 2),
   [81] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_element_repeat2, 2),
   [83] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_element_repeat2, 2), SHIFT_REPEAT(37),
-  [86] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element_id_name, 1),
-  [88] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element_id_name, 1),
+  [86] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_element_id_name, 1, .production_id = 4),
+  [88] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_element_id_name, 1, .production_id = 4),
   [90] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tag_name, 1),
   [92] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tag_name, 1),
   [94] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tag, 2),

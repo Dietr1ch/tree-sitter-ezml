@@ -110,20 +110,6 @@
           }
         ]
       },
-      "id": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "#",
-            "named": false
-          },
-          {
-            "type": "element_id_name",
-            "named": true
-          }
-        ]
-      },
       "tags": {
         "multiple": true,
         "required": false,
@@ -136,9 +122,13 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "element_id_name",
+          "named": true
+        },
         {
           "type": "element_name",
           "named": true

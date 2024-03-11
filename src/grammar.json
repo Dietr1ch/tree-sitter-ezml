@@ -57,29 +57,25 @@
           "name": "element_name"
         },
         {
-          "type": "FIELD",
-          "name": "id",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "#"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "element_id_name"
-                  }
-                ]
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "#"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "element_id_name"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "FIELD",
@@ -159,8 +155,12 @@
       "name": "_identifier"
     },
     "element_id_name": {
-      "type": "SYMBOL",
-      "name": "_identifier"
+      "type": "FIELD",
+      "name": "id",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_identifier"
+      }
     },
     "_action": {
       "type": "CHOICE",

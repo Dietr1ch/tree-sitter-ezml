@@ -14,7 +14,7 @@ module.exports = grammar ({
 
 		element: $ => seq(
 			$.element_name,
-			field('id',         optional(seq('#', $.element_id_name))),
+			optional(seq('#', $.element_id_name)),
 			field('tags',       repeat($.tag)),
 			field('attributes', repeat($.attribute)),
 			field('content',    optional($.content)),
@@ -31,7 +31,7 @@ module.exports = grammar ({
 		_identifier: _ => /[a-zA-Z0-9\p{L}_-]+/,
 
 		element_name:    $ => $._identifier,
-		element_id_name: $ => $._identifier,
+		element_id_name: $ => field('id', $._identifier),
 
 		_action: $ => choice(
 			$.inline_action,
