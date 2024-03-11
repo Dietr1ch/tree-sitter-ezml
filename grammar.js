@@ -28,8 +28,10 @@ module.exports = grammar ({
 			'}',
 		),
 
-		element_name:    _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
-		element_id_name: _ => /([A-Za-z_][A-Za-z0-9_-]{0,30})/,
+		_identifier: _ => /[a-zA-Z0-9\p{L}_-]+/,
+
+		element_name:    $ => $._identifier,
+		element_id_name: $ => $._identifier,
 
 		_action: $ => choice(
 			$.inline_action,
@@ -39,10 +41,10 @@ module.exports = grammar ({
 		exec_action:   _ => token(seq('|', /.*/)),
 
 		tag: $ => seq('.', $.tag_name),
-		tag_name: _ => /([A-Za-z0-9_-]{1,30})/,
+		tag_name: $ => $._identifier,
 
 		attribute: $ => seq(',', $.attribute_name, optional(seq('=', $.attribute_value))),
-		attribute_name: _ => /([A-Za-z_][A-Za-z0-9_-]*)/,
+		attribute_name: $ => $._identifier,
 		attribute_value: _ => choice(
 			seq('"', token(/[^"]*/), '"'),
 			seq("'", token(/[^']*/), "'"),

@@ -134,13 +134,17 @@
         }
       ]
     },
-    "element_name": {
+    "_identifier": {
       "type": "PATTERN",
-      "value": "([A-Za-z_][A-Za-z0-9_-]{0,30})"
+      "value": "[a-zA-Z0-9\\p{L}_-]+"
+    },
+    "element_name": {
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "element_id_name": {
-      "type": "PATTERN",
-      "value": "([A-Za-z_][A-Za-z0-9_-]{0,30})"
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "_action": {
       "type": "CHOICE",
@@ -201,8 +205,8 @@
       ]
     },
     "tag_name": {
-      "type": "PATTERN",
-      "value": "([A-Za-z0-9_-]{1,30})"
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "attribute": {
       "type": "SEQ",
@@ -239,8 +243,8 @@
       ]
     },
     "attribute_name": {
-      "type": "PATTERN",
-      "value": "([A-Za-z_][A-Za-z0-9_-]*)"
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "attribute_value": {
       "type": "CHOICE",
