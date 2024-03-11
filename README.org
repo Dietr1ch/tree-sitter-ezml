@@ -1,0 +1,74 @@
+#+title: ezML, the ez markup language
+
+* Info
+~ezML~ is still useless, but aspires to be a compact language to generate /XML/.
+
+
+** Sneak peek
+This is what it looks like so far,
+
+#+begin_src zml
+  html#head {
+    head {
+      ! Why are you snooping on my webpage?
+
+      title: ezML demo
+
+      / Styles
+      / ------
+      link,href="/style/theme.css"
+          ,rel="stylesheet"
+      script,src="/lib/htmx.pre.js"
+            ,fetchpriority="high"
+            ,integrity="sha2-34"
+      / Metadata
+      meta,property='og:sad_story'
+          ,content="ezML wants to be a real language some day"
+
+      < ./includes.html
+      | cat early_script.js | minifier
+    }
+    body.column.round {
+      div#main_column {
+        navbar {
+        }
+        main {
+        }
+      }
+    }
+#+end_src
+
+** Direction
+*** Syntax
+It'd be nice to drop the braces in favor of indent-based blocks like [[https://haml.info/][haml]] or [[https://slim-template.github.io/][slim]].
+*** Editor support
+We can highlight using ~tree-sitter highlight ./path/to/file.zml~, but things
+are not so fun outside the editor.
+I'd love to have Emacs support, but haven't dig into it too much. It seems we
+need to create a file in [[https://github.com/emacs-mirror/emacs/blob/master/lisp/textmodes/][~/src/Emacs/lisp/textmodes/]] and build Emacs ourselves.
+*** Using ezML
+We need to be able to output /XML/ and /HTML/, but there's a few problems,
+
+**** Not all features are supported
+We don't have syntax for writing text into an element, nor for using ~zml~ within it.
+
+For instance, generating this cursed title is not possible,
+
+#+begin_src html
+  <title>My <b>BIG</b>, <blink>flashy</blink>, and <i>awesome</i> title</title>
+#+end_src
+
+**** No tools use the ezML grammar yet
+This is probably a bigger problem. We need to build a tool that at least outputs
+the /XML/ we have syntax for.
+** Code
+If you are not familiar with [[https://tree-sitter.github.io/][tree-sitter]] you may think this is already big
+project, it is not, there's barely [[./grammar.js][the grammar definition]] and some test data in
+[[./test/corpus/]] and [[./examples/]].
+
+
+* Contributing
+This project is a day old, so I don't truly expect contributors yet.
+
+Since ezML's design is still in the drawer comments use cases and discussion are
+better than code.
